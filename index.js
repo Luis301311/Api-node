@@ -56,5 +56,5 @@ app.get('/api/mototaxis/:cedula',(req,res)=>{
     else res.send(Mototaxi)
 })
 
-const port = process.env.port || 80;
+const port = process.env.port || 80
 app.listen(port, ()=> console.log(`Escuchando en puerto ${port}`))
