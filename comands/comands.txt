@@ -1,0 +1,14 @@
+SQL:
+    npm i mysql
+
+
+Knex:
+    npm install knex
+
+body parser:
+    npm i doby-parser
+        const bodyParser = require('body-parser');  
+        app.use(bodyParser.json());
+
+Seguridad:
+    npm i dotenv
