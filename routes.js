@@ -1,6 +1,6 @@
 module.exports=function(app,databaseService){
     app.get('/',(req, res)=>{
-        res.status(200).json({"mensaje": "todo bien"});
+        res.status(200).json({"mensaje": " OK "});
     })
 
     app.post('/api/users', (req, res)=>{
@@ -8,7 +8,7 @@ module.exports=function(app,databaseService){
         console.log(NuevoUsuario);
         databaseService.createUser(NuevoUsuario)
             .then(()=>{
-                res.status(200).json({"mensaje": "Usuario agregado"});
+                res.status(200).json({"message": "Added user."});
             }).catch((err)=>{
                 res.status(500).json(err);
             })
@@ -18,7 +18,7 @@ module.exports=function(app,databaseService){
         console.log(newDrivers);
         databaseService.createDrivers(newDrivers)
             .then(()=>{
-                res.status(200).json({"mensaje": "Usuario agregado"});
+                res.status(200).json({"message": "Added driver"});
             }).catch((err)=>{
                 res.status(500).json(err);
             })
@@ -28,7 +28,7 @@ module.exports=function(app,databaseService){
         console.log(newTravels);
         databaseService.createTravels(newTravels)
             .then(()=>{
-                res.status(200).json({"mensaje": "Usuario agregado"});
+                res.status(200).json({"message": "Added travels"});
             }).catch((err)=>{
                 res.status(500).json(err);
             })
@@ -38,7 +38,7 @@ module.exports=function(app,databaseService){
         console.log(newVehicles);
         databaseService.createVehicles(newVehicles)
             .then(()=>{
-                res.status(200).json({"mensaje": "Usuario agregado"});
+                res.status(200).json({"message": "Added vehicles"});
             }).catch((err)=>{
                 res.status(500).json(err);
             })

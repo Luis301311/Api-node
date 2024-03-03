@@ -42,7 +42,7 @@ const databaseService = ()=>{
             Surname: Surname,
             Second_surname: Second_surname,
             Phone: Phone,
-            MaVehicle_plateil: Vehicle_plate,
+            Vehicle_plate: Vehicle_plate,
             Qualification: Qualification,
             State: State
         });
