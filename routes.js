@@ -13,6 +13,7 @@ module.exports=function(app,databaseService){
                 res.status(500).json(err);
             })
     });
+    
     app.post('/api/drivers', (req, res)=>{
         const newDrivers=req.body;
         console.log(newDrivers);
@@ -54,13 +55,39 @@ module.exports=function(app,databaseService){
                 res.status(500).json(err);
             })  
     })
+    app.get('/api/users/:person',(req,res)=>{
+        const person = req.params.person;
+        databaseService.getAllUsers()
+            .then(users=>{
+                const result = users.filter(
+                       users => users.Identification === person 
+                    || users.First_name.toLowerCase() === person.toLowerCase() 
+                    || users.Surname.toLowerCase() == person.toLowerCase());
+                res.status(200).json(result);
+            }).catch((err)=>{
+                res.status(404).json(err);
+            })
+    });
     app.get('/api/drivers', (req, res)=>{  
         databaseService.getAllDrivers()
-            .then(users =>{
-                res.status(200).json(users);
+            .then(drivers =>{
+                res.status(200).json(drivers);
             }).catch((err)=>{
                 res.status(500).json(err);
             })  
+    })
+    app.get('/api/drivers/:person',(req,res)=>{
+        const person = req.params.person;
+        databaseService.getAllDrivers()
+            .then(drivers=>{
+                const result = drivers.filter(
+                       drivers => drivers.Identification === person 
+                    || drivers.First_name.toLowerCase() === person.toLowerCase() 
+                    || drivers.Surname.toLowerCase() == person.toLowerCase());
+                res.status(200).json(result);
+            }).catch((err)=>{
+                res.status(404).json(err);
+            })
     })
     app.get('/api/travels', (req, res)=>{  
         databaseService.getAllTravels()
@@ -87,4 +114,16 @@ module.exports=function(app,databaseService){
             })  
     })
 
+    app.get('/api/vehicles/:object',(req,res)=>{
+        const object = req.params.object;
+        databaseService.getAllvehicles()
+            .then(Vehicles=>{
+                const result = Vehicles.filter(
+                    Vehicles => Vehicles.Plate.toLowerCase() === object.toLowerCase()
+                    || Vehicles.Model.toLowerCase() === object.toLowerCase())
+                res.status(200).json(result);
+            }).catch((err)=>{
+                res.status(404).json(err);
+            })
+    })
 }
