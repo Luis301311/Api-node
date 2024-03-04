@@ -1,12 +1,26 @@
 const databaseService = ()=>{
+
+        const {
+    DB_HOST,
+    DB_NAME,
+    DB_PASSWORD,
+    DB_USER,
+    DB_PORT
+    } = require('../config')
+
     const knex = require('knex')({  
         client: 'mysql',
         connection:{
-            host: process.env.BD_HOST,
-            port:3306,    
-            user: process.env.BD_USER,
-            password: process.env.BD_PASSWORD,
-            database: process.env.BD 
+            host: DB_HOST,
+            port:DB_PORT,    
+            user: DB_USER,
+            password: DB_PASSWORD,
+            database: DB_NAME
+            // host: 'localhost',
+            // port: 3306,    
+            // user: DB_USER,
+            // password: DB_PASSWORD,
+            // database: DB_NAME
         }
     });
 
