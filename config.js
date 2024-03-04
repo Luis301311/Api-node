@@ -1,9 +1,9 @@
-const PORT = process.env.PORT || 3000;
-const dbHost = process.env.DB_HOST || 'localhost';
+const PORT = process.env.PORT || 17513;
+const dbHost = process.env.DB_HOST || 'monorail.proxy.rlwy.net';
 const dbUser = process.env.DB_USER || 'root';
-const dbPassword = process.env.DB_PASSWORD || 'luis';
-const dbName = process.env.DB_NAME || 'MotoExpress';
-const dbPort = process.env.DB_PORT || 3306;
+const dbPassword = process.env.DB_PASSWORD || 'd-f12b421D5fDH26cCDbgh5bGF1G3H5H';
+const dbName = process.env.DB_NAME || 'railway';
+const dbPort = process.env.DB_PORT || 3606;
 
 module.exports = {
     PORT: PORT,
