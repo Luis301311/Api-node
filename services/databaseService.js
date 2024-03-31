@@ -1,12 +1,11 @@
 const databaseService = ()=>{
-
-        const {
+     const {
     DB_HOST,
     DB_NAME,
     DB_PASSWORD,
     DB_USER,
     DB_PORT
-    } = require('../config')
+   } = require('../config')
 
     const knex = require('knex')({  
         client: 'mysql',
@@ -117,6 +116,8 @@ const databaseService = ()=>{
         getAllTravels
     };
 };
+
+
 module.exports = {
     databaseService
 };
