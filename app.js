@@ -8,6 +8,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
+
+
 require('./routes')(app, databaseService());
 
 app.listen(PORT,function(){

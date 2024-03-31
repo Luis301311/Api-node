@@ -1,9 +1,16 @@
-const PORT = process.env.PORT || 3000;
-const dbHost = process.env.DB_HOST || 'bg6ixcnj8ifmxc0igvcr-mysql.services.clever-cloud.com';
-const dbUser = process.env.DB_USER || 'uog1u20zdsuoij9c';
-const dbPassword = process.env.DB_PASSWORD || 'tOWKlyt5cqkIGsk8kxMS';
-const dbName = process.env.DB_NAME || 'bg6ixcnj8ifmxc0igvcr';
-const dbPort = process.env.DB_PORT || 3306;
+// const PORT = process.env.PORT || 3000;
+// const dbHost = process.env.DB_HOST || 'bg6ixcnj8ifmxc0igvcr-mysql.services.clever-cloud.com';
+// const dbUser = process.env.DB_USER || 'uog1u20zdsuoij9c';
+// const dbPassword = process.env.DB_PASSWORD || 'tOWKlyt5cqkIGsk8kxMS';
+// const dbName = process.env.DB_NAME || 'bg6ixcnj8ifmxc0igvcr';
+// const dbPort = process.env.DB_PORT || 3306;
+const PORT = process.env.PORT
+const dbHost = process.env.DB_HOST 
+const dbUser = process.env.DB_USER 
+const dbPassword = process.env.DB_PASSWORD
+const dbName = process.env.DB_NAME
+const dbPort = process.env.DB_PORT
+
 
 module.exports = {
     PORT: PORT,
